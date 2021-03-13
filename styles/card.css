@@ -1,0 +1,190 @@
+:root {
+  --size: 11px;
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --size: 9px;
+  }
+}
+
+.card-fix {
+  font-size: var(--size);
+}
+
+.card {
+  border-radius: 1em;
+  width: 34em;
+  min-height: 20em;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid #ffffff;
+  position: relative;
+  background: linear-gradient(to right, rgb(75, 15, 110), rgb(178, 8, 184));
+}
+
+.backside {
+  animation: frontToBack 0.6s linear forwards;
+}
+
+.frontside {
+  animation: backToFront 0.6s linear forwards;
+}
+
+.card-back-face {
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.card-front-face {
+  height: 100%;
+  opacity: 0;
+  margin-top: 6em;
+}
+
+.animating {
+  opacity: 0;
+}
+
+.init {
+  opacity: 1;
+}
+
+.card-face-show {
+  animation: show 0ms linear forwards 0.3s;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 4.5em;
+}
+
+.card-bottom {
+  padding: 0 2em;
+  margin-top: 1em;
+}
+
+.chip {
+  width: 4em;
+  height: 3em;
+  background: url(../card/frontface/top/img/chip.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-number {
+  font-size: 1.9em;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.seperator {
+  text-shadow: 1px 1px #000000;
+  color: #ffffff;
+  letter-spacing: 0.15em;
+}
+
+.seperator-owner:last-child {
+  margin-left: 0.5em;
+}
+
+.card-lowest-part {
+  height: 70%;
+  margin-top: 2em;
+}
+
+.owner {
+  margin-top: 1em;
+  word-break: break-all;
+}
+
+.card-lowest-part {
+  font-size: 1.1em;
+}
+
+.valid-thru {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.block-label {
+  display: block;
+  font-size: 0.9em;
+  color: #ffffff;
+  line-height: 0.9;
+}
+
+.valid-thru-right {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.card-brand {
+  position: absolute;
+  width: 5.5em;
+  right: 1em;
+  bottom: 0.5em;
+}
+
+.card-type-img {
+  width: 100%;
+  animation: show 0.6s ease-out forwards;
+}
+
+.back-face-ribbon {
+  height: 4em;
+  background-color: #000000;
+  margin-top: 2em;
+}
+
+.card-security-ribbon {
+  width: 60%;
+  height: 3em;
+  background: #dddddd;
+  margin: 1em 1em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 0.2em;
+}
+
+.card-security-code {
+  color: #000000;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+@keyframes frontToBack {
+  0% {
+    transform: rotateY(0);
+  }
+
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes backToFront {
+  0% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
