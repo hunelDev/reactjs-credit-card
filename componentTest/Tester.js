@@ -9,7 +9,9 @@ import {
 } from '../form';
 import { HunelCreditCard, HunelProvider } from '../index';
 
-const hunel = new HunelCreditCard();
+const hunel = new HunelCreditCard({
+  yearLength: 12,
+});
 
 export default function Tester() {
   return (

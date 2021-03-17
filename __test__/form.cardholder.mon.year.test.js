@@ -35,4 +35,10 @@ describe('card situation after onChange event firing', () => {
 
     expect(month.children.length).toBe(12 - mon);
   });
+
+  test('validthruyear to be certain range', () => {
+    const { container } = render(<Tester />);
+    const year = container.querySelector('.year');
+    expect(year.children.length).toBe(15);
+  });
 });

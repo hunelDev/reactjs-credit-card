@@ -2,6 +2,7 @@
  * @typedef HunelConfig
  * @type {object}
  * @property {boolean} middlePartHide - It's uses to hide the middle part of credit card number, default value is false
+ * @property {number} yearLength - It's validThruYear list length,default value is 10.You can set this value to change yearValidThru list range
  */
 
 /**
@@ -9,6 +10,7 @@
  */
 var hunelConfig = {
   middlePartHide: false,
+  yearLength: 10,
 };
 
 export default class HunelCreditCard {
@@ -17,11 +19,10 @@ export default class HunelCreditCard {
   #owner = '';
   #validThruMonth = this.#date.getMonth() + 1;
   #validThruYear = this.#date.getFullYear();
-  #validThruYearLength = 10;
   #securityCode = '';
   #fnMounth = null;
   #fnCardStates = null;
-  #config = hunelConfig;
+  #config = null;
   /**
    *
    * @param {HunelConfig} config  a config object which can configure the HunelCreditCard instance
@@ -81,10 +82,6 @@ export default class HunelCreditCard {
     this.#securityCode = value;
   }
 
-  get _validThruYearLength() {
-    return this.#validThruYearLength;
-  }
-
   setMonthRelativeWithYear(fn) {
     this.#fnMounth = fn;
   }
@@ -133,7 +130,7 @@ export default class HunelCreditCard {
       validThruMonth: this._validThruMonth,
       validThruYear: this._validThruYear,
       securityCode: this._securityCode,
-      validYearLength: this._validThruYearLength,
+      validYearLength: this.#config.yearLength,
     };
   }
 }

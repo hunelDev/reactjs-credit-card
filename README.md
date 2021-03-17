@@ -4,7 +4,7 @@
 
 [**Github** ](https://github.com/huneljs/reactjs-credit-card 'Github ')
 
-[**Demo** ](https://reactjs-credit-card-example-xo1yaqfuf-huneljs.vercel.app/ 'Demo ')
+[**Demo** ](https://reactjs-credit-card-example.vercel.app/ 'Demo ')
 
 [**For Demo Files** ](https://github.com/huneljs/reactjs-credit-card-example/tree/master/src/ 'For Demo Files ')
 
@@ -259,6 +259,7 @@ HunelCreditCard's constructer accept a object for customizing.But you don't have
 
 For now config object has middlePartHide property which default value false.
 middlePartHide is uses to hide the credit card number on the Card component.
+Config object also has yearLength property which uses to declare valid thru year certain range.
 
 ```jsx
 import { HunelProvider, HunelCreditCard } from 'reactjs-credit-card';
@@ -266,6 +267,7 @@ import { HunelProvider, HunelCreditCard } from 'reactjs-credit-card';
 //you can declare a object
 const hunel = new HunelCreditCard({
   middlePartHide: false,
+  yearLength: 15, //from 2022 to 2036
 });
 
 //also you can create instance without declare a config object
