@@ -1,0 +1,60 @@
+{
+  "name": "reactjs-credit-card",
+  "version": "1.0.6",
+  "description": "This Package has react credit card form components and form validation system",
+  "keywords": [
+    "credit card",
+    "react",
+    "reactjs",
+    "npm",
+    "form validation",
+    "virtual credit card"
+  ],
+  "author": {
+    "name": "Ceyhun Yücel",
+    "email": "huneljs@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huneljs/reactjs-credit-card.git"
+  },
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "test": "react-scripts test"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
