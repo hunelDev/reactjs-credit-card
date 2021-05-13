@@ -2,11 +2,11 @@
 
 ![npm](https://img.shields.io/npm/v/reactjs-credit-card)
 
-[**Github** ](https://github.com/huneljs/reactjs-credit-card 'Github ')
+[**Github** ](https://github.com/huneljs/reactjs-credit-card "Github ")
 
-[**Demo** ](https://reactjs-credit-card-example.vercel.app/ 'Demo ')
+[**Demo** ](https://reactjs-credit-card-example.vercel.app/ "Demo ")
 
-[**For Demo Files** ](https://github.com/huneljs/reactjs-credit-card-example/tree/master/src/ 'For Demo Files ')
+[**For Demo Files** ](https://github.com/huneljs/reactjs-credit-card-example/tree/master/src/ "For Demo Files ")
 
 Hunel React Credit Card System is a completely customizable credit card component and validation system.
 
@@ -31,7 +31,7 @@ Create a HunelCrediCard instance and Wrap any component with HunelProvider;
 index.js;
 
 ```jsx
-import { HunelProvider, HunelCreditCard } from 'reactjs-credit-card';
+import { HunelProvider, HunelCreditCard } from "reactjs-credit-card";
 
 const hunel = new HunelCreditCard();
 
@@ -39,7 +39,7 @@ ReactDOM.render(
   <HunelProvider config={hunel}>
     <App />
   </HunelProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -82,17 +82,17 @@ Also data object has special verification result for each form component.
 Then let's more develop on App component and declare a hook and also little bit customize form components;
 
 ```jsx
-import './style.css';
+import "./style.css";
 import {
   CardHolder,
   CardNumber,
   CardSecurityCode,
   ValidThruMonth,
   ValidThruYear,
-} from 'reactjs-credit-card/form';
-import Card from 'reactjs-credit-card/card';
-import { useCardForm } from 'reactjs-credit-card';
-import { useState } from 'react';
+} from "reactjs-credit-card/form";
+import Card from "reactjs-credit-card/card";
+import { useCardForm } from "reactjs-credit-card";
+import { useState } from "react";
 
 function App() {
   const getFormData = useCardForm();
@@ -109,7 +109,7 @@ function App() {
     if (!isValid)
       alert(
         `${data.holder.value} form data values invalid :) and holder also ${
-          data.holder.isValid ? 'valid' : 'invalid'
+          data.holder.isValid ? "valid" : "invalid"
         }`
       );
   }
@@ -126,7 +126,7 @@ function App() {
           //If numberValid state is false then show a error
           <CardNumber
             placeholder="Card Number"
-            className={`input-text${!numberValid ? ' error' : ''}`}
+            className={`input-text${!numberValid ? " error" : ""}`}
             onFocus={handleFocus}
           />
           <CardHolder placeholder="Card Holder" className="input-text" />
@@ -148,24 +148,24 @@ function App() {
 }
 ```
 
-you can take a look [reactjs-credicard-example](https://github.com/huneljs/reactjs-credit-card-example/blob/master/src/app.js 'reactjs-credicard-example')
+you can take a look [reactjs-credicard-example](https://github.com/huneljs/reactjs-credit-card-example/blob/master/src/app.js "reactjs-credicard-example")
 
 ### Get form data and validation with HOC
 
 We can get form data and verification results with hoc.Let's modify the same example with hoc;
 
 ```jsx
-import './style.css';
+import "./style.css";
 import {
   CardHolder,
   CardNumber,
   CardSecurityCode,
   ValidThruMonth,
   ValidThruYear,
-} from 'reactjs-credit-card/form';
-import Card from 'reactjs-credit-card/card';
-import { cardForm } from 'reactjs-credit-card'; //import the HOC
-import { useState } from 'react';
+} from "reactjs-credit-card/form";
+import Card from "reactjs-credit-card/card";
+import { cardForm } from "reactjs-credit-card"; //import the HOC
+import { useState } from "react";
 
 function App({ getCardForm }) {
   const [numberValid, setNumberValid] = useState(true);
@@ -180,7 +180,7 @@ function App({ getCardForm }) {
     if (!isValid)
       alert(
         `${data.holder.value} form data values invalid :) and holder also ${
-          data.holder.isValid ? 'valid' : 'invalid'
+          data.holder.isValid ? "valid" : "invalid"
         }`
       );
   }
@@ -197,7 +197,7 @@ function App({ getCardForm }) {
           //If numberValid state is false then show a error
           <CardNumber
             placeholder="Card Number"
-            className={`input-text${!numberValid ? ' error' : ''}`}
+            className={`input-text${!numberValid ? " error" : ""}`}
             onFocus={handleFocus}
           />
           <CardHolder placeholder="Card Holder" className="input-text" />
@@ -262,12 +262,12 @@ middlePartHide is uses to hide the credit card number on the Card component.
 Config object also has yearLength property which uses to declare valid thru year certain range.
 
 ```jsx
-import { HunelProvider, HunelCreditCard } from 'reactjs-credit-card';
+import { HunelProvider, HunelCreditCard } from "reactjs-credit-card";
 
 //you can declare a object
 const hunel = new HunelCreditCard({
   middlePartHide: false,
-  yearLength: 15, //from 2022 to 2036
+  yearLength: 15, //from 2021 to 2036
 });
 
 //also you can create instance without declare a config object
@@ -275,7 +275,7 @@ ReactDOM.render(
   <HunelProvider config={hunel}>
     <App />
   </HunelProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -283,7 +283,7 @@ ReactDOM.render(
 
 For now Mastercard,Visa,American Express and Discover card types have support.
 
-### IF You Dont't Use Webpack Image Loader
+### If You Dont't Use Webpack Image Loader
 
 If you don't use webpack image loader then you can download the image files as manuel.And after download extract the files to public file
-[**Download the images** ](https://github.com/huneljs/reactjs-credit-card/tree/master/card.zip 'Download the images ')
+[**Download the images** ](https://github.com/huneljs/reactjs-credit-card/tree/master/card.zip "Download the images ")

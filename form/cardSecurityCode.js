@@ -29,7 +29,7 @@ export default function CardSecurityCode(props) {
       }}
       onBlur={(e) => {
         pokeVirtualCardStates(6, 0);
-        if ('onBlur' in newProps) newProps['onFocus'](e);
+        if ('onBlur' in newProps) newProps['onBlur'](e);
       }}
       value={securityCode}
       {...parseProps(newProps, 'onChange', 'onFocus', 'onBlur')}
